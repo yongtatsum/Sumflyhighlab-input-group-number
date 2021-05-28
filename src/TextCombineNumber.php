@@ -57,7 +57,13 @@ class TextCombineNumber extends Field
         $this->decimals($this->decimals)
              ->textAlign($this->textAlign)
              ->displayUsing(function ($value) {
-                 return ! is_null($value) ? $this->prefix.number_format($value, $this->decimals, $this->dec_point, $this->thousands_sep).$this->suffix : null;
+                 if(is_numeric($value)){
+                    return ! is_null($value) ? $this->prefix.number_format($value, $this->decimals, $this->dec_point, $this->thousands_sep).$this->suffix : null;
+
+                 }else{
+                    return ! is_null($value) ? $this->prefix.$value.$this->suffix : null;
+
+                 }
              });
     }
     
