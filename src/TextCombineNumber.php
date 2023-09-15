@@ -39,7 +39,7 @@ class TextCombineNumber extends Field
      *
      * @var string
      */
-    private $thousands_sep = ' ';
+    private $thousands_sep = '';
 
     /**
      * The suffix to be used when displaying the number.
