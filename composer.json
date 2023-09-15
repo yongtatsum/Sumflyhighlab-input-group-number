@@ -1,6 +1,7 @@
 {
     "name": "sumflyhighlab/text-combine-number",
     "description": "A Laravel Nova field.",
+    "version": "2.0", 
     "keywords": [
         "laravel",
         "nova"
