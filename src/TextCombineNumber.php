@@ -108,7 +108,7 @@ class TextCombineNumber extends Field
     public function prefix($prefix)
     {
         $this->prefix = $prefix;
-        
+      
        $this->withMeta(['position' => 'before','text' => $prefix]);
 
         return $this;

@@ -1,24 +1,20 @@
+
 <template>
-  <div :class="`text-${field.textAlign}`">
-    <template v-if="hasValue">
-      <div v-if="field.asHtml" v-html="field.value"></div>
-      <span v-else class="whitespace-no-wrap">{{ field.value }}</span>
+  <div>
+    <template v-if="fieldValue">
+      <div v-if="shouldDisplayAsHtml" @click.stop v-html="fieldValue"></div>
+      <span v-else>{{ fieldValue }} </span>
     </template>
     <p v-else>&mdash;</p>
   </div>
 </template>
 
 <script>
-export default {
-  props: ['resourceName', 'field'],
+import { FieldValue } from 'laravel-nova'
 
-  computed: {
-    /**
-     * Determine if the field has a value other than null.
-     */
-    hasValue() {
-      return this.field.value !== null
-    },
-  },
+export default {
+  mixins: [FieldValue],
+
+  props: ['resourceName', 'field'],
 }
 </script>

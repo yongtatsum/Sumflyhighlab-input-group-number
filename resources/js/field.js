@@ -1,5 +1,10 @@
-Nova.booting((Vue, router, store) => {
-  Vue.component('index-text-combine-number', require('./components/IndexField'))
-  Vue.component('detail-text-combine-number', require('./components/DetailField'))
-  Vue.component('form-text-combine-number', require('./components/FormField'))
+import IndexField from './components/IndexField'
+import DetailField from './components/DetailField'
+import FormField from './components/FormField'
+
+
+Nova.booting((app, store) => {
+  app.component('index-text-combine-number', IndexField)
+  app.component('detail-text-combine-number',DetailField)
+  app.component('form-text-combine-number', FormField)
 })
